@@ -1,21 +1,20 @@
 {
-  "name": "TIS",
+  "name": "tis",
   "version": "1.0.0",
   "description": "Türeninformationssystem",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/MeisterGig/TIS",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+	"Türen",
+	"Informations",
+	"System",
+	"Schilder"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Tobias Baier, Lukas Holzner, Tobias Bartz, Li Wei Chun, Nicolas Bach, Marlene Eichner",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^7.1.1"
   }
