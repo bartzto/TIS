@@ -1,7 +1,7 @@
 {
   "name": "tis",
   "version": "1.0.0",
-  "description": "Türeninformationssystem",
+  "description": "TürenInformationssystem",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
