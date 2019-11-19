@@ -1,21 +1,11 @@
 {
-  "name": "tis",
-  "version": "1.0.0",
-  "description": "TürenInformationssystem",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": "https://github.com/MeisterGig/TIS",
-  "keywords": [
-	"Türen",
-	"Informations",
-	"System",
-	"Schilder"
-  ],
-  "author": "Tobias Baier, Lukas Holzner, Tobias Bartz, Li Wei Chun, Nicolas Bach, Marlene Eichner",
-  "license": "MIT",
-  "devDependencies": {
-    "electron": "^7.1.1"
-  }
+    "name": "raumsystem",
+    "version": "0.1.0",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "devDependencies": {
+        "electron": "^7.1.1"
+    }
 }
