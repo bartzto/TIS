@@ -5,7 +5,10 @@ function start() {
 //Test
 function time() {
     var now = new Date();
-    day = now.getDate();
+    var dayname = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag' ];
+
+    day = now.getDay();
+    date = now.getDate();
     month = now.getMonth() + 1;
     year = now.getFullYear();
 
@@ -13,7 +16,7 @@ function time() {
     minutes = now.getMinutes();
     seconds = now.getSeconds();
 
-    thetime = day + "." + month + "." + year + " ";
+    thetime = dayname[day] + ", " + date + "." + month + "." + year + " ";
     thetime += (hours < 10) ? "0" + hours + ":" : hours + ":";
     thetime += (minutes < 10) ? "0" + minutes + ":" : minutes + ":";
     thetime += (seconds < 10) ? "0" + seconds : seconds;
