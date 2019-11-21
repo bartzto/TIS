@@ -1,0 +1,13 @@
+{
+    "mysql":{
+        "host":"10.3.141.1",
+        "port":"3306",
+        "user":"tistablet",
+        "password":"tistablet",
+        "database":"tis_database"
+
+    },
+    "tablet":{
+        "room":"202"
+    }
+}
