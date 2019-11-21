@@ -13,5 +13,5 @@ function grab() {
     stat = getStatus();
     sta = document.getElementById("status");
     sta.innerHTML = stat? "Frei":"Belegt";
-    stat? sta.fontcolor("green"): sta.fontcolor("green");
+    sta.style.color= stat? "green": "red";
 }
