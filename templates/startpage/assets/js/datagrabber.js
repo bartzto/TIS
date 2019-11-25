@@ -6,11 +6,19 @@ function start2() {
 }
 
 function grab() {
-
-    room = document.getElementById("room");
-    room.innerHTML = getRoom();
-
     stat = getStatus();
+    setRoom(getRoom());
+    setStatus(stat);
+
+}
+
+function setRoom(room) {
+        //Ermittelt Raumnummer aus der Config Datei
+        roomElem = document.getElementById("room");
+        roomElem.innerHTML = room; 
+}
+
+function setStatus(stat) {
     sta = document.getElementById("status");
     sta.innerHTML = stat? "Frei":"Belegt";
     sta.style.color= stat? "green": "red";
