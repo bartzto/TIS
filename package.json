@@ -5,6 +5,10 @@
     "scripts": {
         "start": "electron ."
     },
+    "dependencies": {
+        "electron": "^7.1.1",
+        "sqlite3": "^4.1.0"
+     },
     "devDependencies": {
         "electron": "^7.1.1"
     }
