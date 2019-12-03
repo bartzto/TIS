@@ -2,7 +2,6 @@ function start() {
     time();
     window.setInterval("time()", 1000);
 }
-
 //Test
 function time() {
     var now = new Date();

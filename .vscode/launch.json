@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+
       {
         "name": "Debug Main Process",
         "type": "node",
@@ -12,7 +13,15 @@
         },
         "program": "${workspaceRoot}/main.js",
         "protocol": "inspector"
-      }
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug File",
+        "program": "${file}"
+    }
+      
+      
     ]
   }
   
