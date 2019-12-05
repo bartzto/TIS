@@ -8,8 +8,7 @@ function start2() {
 function grab() {
     stat = getStatus();
     setRoom(getRoom());
-    setStatus(stat);
-
+    setStatus();
 }
 
 function setRoom(room) {
@@ -18,7 +17,7 @@ function setRoom(room) {
         roomElem.innerHTML = room; 
 }
 
-function setStatus(stat) {
+function setStatus() {
 
     var time;
     var now = new Date();
@@ -44,5 +43,11 @@ function setStatus(stat) {
 
     sta = document.getElementById("status");
     sta.innerHTML = getStatus(new Date(real_date), time, getRoom());
+
+    sta2 = document.getElementById("date");
+    sta2.innerHTML = "<strong>Bis:</strong> " + getReserverdUntil(new Date(real_date), time, getRoom());
+
+    sta3 = document.getElementById("reservedby");
+    sta3.innerHTML = "<strong>Von:</strong> " + getBookedBy(new Date(real_date), time, getRoom());
 }
 

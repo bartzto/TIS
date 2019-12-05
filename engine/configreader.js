@@ -1,6 +1,6 @@
 function openJSON(){
     var fs = require('fs');
-    var root = "/home/lukas/development/electron/TIS"
+    var root = "C:/Users/Tobias Bartz/Documents/VisualStudioCode/TIS"
     var contents = fs.readFileSync(root+"/config/config.json");
     // Define to JSON type
     return JSON.parse(contents);
@@ -19,7 +19,7 @@ function getDatabase(){
 
 
 
-function getStatus(){
+function getStatusOld(){
     return Boolean(Math.round(Math.random()));
 }
 

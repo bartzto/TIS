@@ -16,7 +16,7 @@ function time() {
     minutes = now.getMinutes();
     seconds = now.getSeconds();
 
-    thetime = dayname[day] + ", " + date + "." + month + "." + year + " ";
+    thetime = dayname[day] + ", 0" + date + "." + month + "." + year + " ";
     thetime += (hours < 10) ? "0" + hours + ":" : hours + ":";
     thetime += (minutes < 10) ? "0" + minutes + ":" : minutes + ":";
     thetime += (seconds < 10) ? "0" + seconds : seconds;
