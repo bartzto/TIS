@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿.text-left{
+.text-left{
     text-align:left;
 }
 
@@ -16,7 +15,7 @@
  th{
      text-align: center;
      font-size: 20px;
-     width:230px;     
+     width:250px;     
  }
 .feld {
     background:#00ff21;
@@ -54,5 +53,4 @@
     font-size: 25px; 
     font-family: Anton, sans-serif; 
     margin-left: 10%;
->>>>>>> b531cbc68723097d345dd20602d1ad1b9524657e
 }
