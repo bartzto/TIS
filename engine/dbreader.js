@@ -1,12 +1,12 @@
 //const sqlite3 = require('sqlite3').verbose();
-var sqlite = require("better-sqlite3");
-var root = "C:/Users/Tobias Bartz/Documents/VisualStudioCode/TIS" 
-// open database in memor
-//var db = new sqlite("example.db");
-var db = new sqlite(root+"/database/tis.db");
+//var root = "C:/Users/Tobias Bartz/Documents/VisualStudioCode/TIS"
+
 
 function formatDate (date){
-  return date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
+  console.log(date);
+  var month = (date.getMonth()+1) < 10 ? '0'+(date.getMonth()+1):''+(date.getMonth()+1);
+  var day = date.getDate() < 10 ? '0'+date.getDate():''+date.getDate();
+  return date.getFullYear()+'-'+month+'-'+day;
 }
 function formatName (name){
   return name.vorname + " " +name.nachname;
@@ -14,19 +14,32 @@ function formatName (name){
 
 
 function getAllUsers(){
+  var root = require('electron-root-path').rootPath;
+  var sqlite = require("better-sqlite3");
+  var db = new sqlite(require('path').join(root,"database","tis.db"));
   var querry = 'SELECT * FROM `tis_user`;'
   return db.prepare(querry).all();
 }
 
 function getBookedBy(date, isafternoon,room){
+  var root = require('electron-root-path').rootPath;
+  var sqlite = require("better-sqlite3");
+  var db = new sqlite(require('path').join(root,"database","tis.db"));
   var querry = 'SELECT vorname, nachname \
     FROM tis_room, tis_user \
     WHERE tis_user.user = tis_room.user\
     AND tis_room.isafternoon = ' + isafternoon +' \
     AND tis_room.roomnr = "' + room+'" \
     AND tis_room.date = "'+ formatDate(date)+'";';
-  var name = db.prepare(querry).get();
+  var name;
+  try {
+     name = db.prepare(querry).get();
+  }
+  catch (e) {
+    name = null;
+  }
   name = name != null ? formatName(name) : null;
+  //db.close();
 
   return name;
 }
@@ -39,9 +52,9 @@ function getReserverdUntil(date,isafternoon,room){
   } else {
     if(isafternoon){
       date.setDate(date.getDate() + 1);
-      return getReserverdUntil(date,false,room)
+      return getReserverdUntil(date,false,room);
     }else{
-      return getReserverdUntil(date,true,room)
+      return getReserverdUntil(date,true,room);
     }
   }
 }
@@ -54,7 +67,5 @@ function getStatus(date,isafternoon,room){
     status['status'] = 1;
     status['reserverduntil'] = getReserverdUntil(date,isafternoon,room);
   }
-  return status; // {status: 0; name: "Lukas Holzner"; reserveduntil: "29.11.2019"}
+  return status; // {status: 1; name: "Lukas Holzner"; reserveduntil: "29.11.2019"}
 }
-
-console.log(getStatus(new Date("2019-11-28"),true, "207b"));

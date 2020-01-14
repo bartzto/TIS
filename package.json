@@ -1,14 +1,17 @@
 {
     "name": "tis",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "main": "main.js",
     "scripts": {
         "start": "electron ."
     },
     "dependencies": {
-        "better-sqlite3": "^5.4.3"
+        "better-sqlite3": "latest",
+        "electron-root-path": "latest"
     },
     "devDependencies": {
-        "electron": "^7.1.3"
+        "electron": ">=7.1.9",
+        "electron-builder": "latest",
+        "electron-rebuild": "latest"
     }
 }

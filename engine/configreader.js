@@ -1,7 +1,10 @@
+
+
 function openJSON(){
     var fs = require('fs');
-    var root = "C:/Users/Tobias Bartz/Documents/VisualStudioCode/TIS"
-    var contents = fs.readFileSync(root+"/config/config.json");
+    var root = require('electron-root-path').rootPath;
+    console.log("Path:" +require('path').join(root,"config","config.json"));
+    var contents = fs.readFileSync(require('path').join(root,"config","config.json"));
     // Define to JSON type
     return JSON.parse(contents);
 }
@@ -24,4 +27,4 @@ function getStatusOld(){
 }
 
 
-console.log(getDatabase());
+console.log(getRoom());
