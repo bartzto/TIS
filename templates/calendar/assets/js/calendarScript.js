@@ -78,6 +78,7 @@ function aktualisieren() {
 //Raum holen
 function raumHolen() {
     zimmer = getRoom();
+    document.getElementById("room").innerHTML = zimmer;
 }
 
 //Boolean zur Pr�fung ob etwas belegt ist und �ndern der Anzeigen
