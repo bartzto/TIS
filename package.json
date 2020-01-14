@@ -1,6 +1,12 @@
 {
     "name": "tis",
     "version": "0.2.0",
+    "author":
+    { 
+        "name" : "Lukas Holzner"
+        , "email" : "b@rubble.com"
+        , "url" : "http://barnyrubble.tumblr.com/"
+    },
     "main": "main.js",
     "scripts": {
         "start": "electron ."
@@ -13,5 +19,18 @@
         "electron": ">=7.1.9",
         "electron-builder": "latest",
         "electron-rebuild": "latest"
+    },
+    "build": {
+        "linux": {
+          "target": [
+            {
+              "target": "deb",
+              "arch": [
+                "x64",
+                "ia32"
+              ]
+            }
+          ]
+        }
     }
 }
